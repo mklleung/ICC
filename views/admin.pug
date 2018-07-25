@@ -1,0 +1,21 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    h2.white Delete Posts
+    form.leftBorder.white(method="post" action="deletePost")
+      ol
+        each addPost in addPosts
+          li
+            input(name="deleteName" value=addPost.value type="checkbox")
+            e   #{addPost.post}  |
+            i   #{addPost.name}  |
+            e   #{addPost.email}  |
+            i   #{addPost.club}  |
+            e   #{addPost.position}  |
+            i   #{addPost.year}  |
+            e   #{addPost.postTime}
+      input(type="submit" value="Delete checked items")
+    br

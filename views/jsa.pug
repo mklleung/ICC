@@ -1,0 +1,34 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    img.imgCenter(src ='/images/jsa.jpg')
+    br
+    h2.white.underline Brandeis Japanese Student Association
+    p.white Despite the small number of Japanese students present at Brandeis, we hope to bring to the Brandeis community different aspects of the Japanese culture, not just the stereotypes. The executive board will be meeting every week to discuss the events that we will hold during the year, such as cultural demonstrations, showings of various movies, and food fairs.
+    a(href='https://lists.brandeis.edu/wws/info/japan')
+        i.fa.fa-envelope
+        |  Email List
+    br
+    br
+    a(href='https://www.facebook.com/BrandeisJSA/')
+        i.fa.fa-facebook
+        |  Facebook
+    br
+    br
+    p.white.underline All JSA Posts:
+    ol.white
+      each addPost in addPosts
+        li
+          e #{addPost.postTime}
+          br
+          e #{addPost.club} #{addPost.position} - #{addPost.name} #{addPost.year}
+          br
+          i #{addPost.post}
+          br
+          br
+      br
+    hr
+    br

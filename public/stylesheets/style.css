@@ -1,0 +1,385 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.underline{
+  text-decoration: underline;
+}
+.demo{
+  padding: 20px;
+  border-left: 30px solid rgba(0,0,0,0.25);
+  border-color: blue;
+}
+.whiteBC{
+  background-color: white;
+}
+.blueBC{
+  background-color: #18395C;
+}
+
+.test1{
+  font-size: 120;
+  overflow: auto;
+  //overflow: hidden;
+  //overflow: visible;
+  border: thin solid blue;
+}
+
+[species="bird"]{
+  font-size: 1in;
+}
+[species="fish"]{
+  font-size: 1cm;
+}
+[color ="black"]{
+  color:black;
+}
+[color ="blue"]{
+  color:blue;
+}
+[color ="red"]{
+  color:red;
+}
+[color ="brown"]{
+  color:brown;
+}
+[color ="grey"]{
+  color:grey;
+}
+[air]{
+  font-family: cursive;
+}
+[water]{
+  font-family: monospace;
+}
+
+.leftBorder{
+  left: 55px;
+}
+.left{
+  left: 10px;
+}
+
+.first {
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 100px;
+  opacity: 0.75;
+}
+.second {
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 200px;
+  opacity: 0.75;
+}
+.third {
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  top: -15px;
+  left: 300px;
+  opacity: 0.75;
+}
+.imgCenter{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.small{
+  width: 150px;
+  height: 150px;
+  margin: 5px auto;
+
+}
+.smallWide{
+  width: 230px;
+  height: 150px;
+  margin: 5px auto;
+
+}
+.medium{
+  width: 300px;
+  height: 300px;
+}
+
+.first, .second, .third, .leftBorder, .imgCenter {
+  position: relative;
+}
+
+.bc {
+  //background-color: #FFFFFF;
+  background: linear-gradient(white, #18395C);
+}
+
+#air{
+  font-size: :50pt;
+}
+#red{
+  background-color: red;
+}
+#red2{
+  color: red;
+}
+#red3{
+  border: thin solid red;
+}
+.red{
+  color:red;
+}
+.lightgrey{
+  color:lightgrey;
+}
+.white{
+  color:white;
+}
+.blue{
+  color:blue;
+}
+.deisBlue{
+  color:#18395C;
+}
+.big{
+  font-size: 30pt;
+}
+.mediumFont{
+  font-size: 20px;
+}
+.huge{
+  font-size: 100pt;
+}
+.bold{
+  font-weight: bold;
+}
+.center{
+  text-align: center;
+}
+.mono{
+  font-family: monospace;
+}
+.fancy{
+  font-family: fantasy;
+}
+
+a:link {
+    color: white;
+    font-size: 12pt;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: #3B5998;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.section {
+  width: 93%;
+  height: 225px;
+  margin: 20px auto;
+  background: transparent;
+  display: flex;
+  //resize: both;
+  //overflow: auto;
+}
+.box {
+  //color: white;
+  background: transparent;
+  flex: 1;
+  margin-right: 10px;
+  text-shadow: 1px 1px 1px black;
+  //resize: both;
+  //overflow: auto;
+}
+.section, .box {
+  border: 0px solid rgba(0,0,0,0.85);
+  padding: 2px;
+}
+
+
+.footer {
+   position: auto;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: transparent;
+   text-align: left;
+}
+
+.checked {
+  color: orange;
+}
+
+
+/*this is the beginning of the side bar CSS */
+
+.sidenav {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: grey;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 60px;
+}
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #FFFFFF;
+display: block;
+transition: 0.3s;
+}
+.sidenav a:hover {
+color: #f1f1f1;
+}
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
+
+.btn{
+  width: 4in;
+  height: 4in;
+  background-color: red;
+}
+
+/*this is the end of the side bar CSS */
+
+
+
+        .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+        color: white;
+        }
+        .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        }
+        .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+        }
+        .overlay a:hover, .overlay a:focus {
+        color: white;
+        }
+        .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        }
+        @media screen and (max-height: 450px) {
+        .overlay a {font-size: 20px}
+        .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+        }
+        }
+
+
+
+
+
+
+/*this is the beginning of the side bar buttons CSS */
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: #18395C;
+  font-size: 20px;
+}
+.icon-bar a:hover {
+    background-color: lightgrey;
+}
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+.google {
+  background: #dd4b39;
+  color: white;
+}
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+
+/*this is the end of the side bar buttons CSS */
+
+
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: white}

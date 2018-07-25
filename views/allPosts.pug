@@ -1,0 +1,21 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    h2.white All Posts
+    //h1 addPosts = #{addPosts}
+    ol.white
+      each addPost in addPosts
+        li
+          e #{addPost.postTime}
+          br
+          e #{addPost.club} #{addPost.position} - #{addPost.name} #{addPost.year}
+          br
+          i #{addPost.post}
+          br
+          br
+      br
+    hr
+    br

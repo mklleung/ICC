@@ -1,0 +1,194 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    block head
+  body
+    ul.nav.navbar-nav.navbar-right
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      h3.underline.white.mono Brandeis
+      h3.underline.white.mono Intercultural
+      h3.underline.white.mono Center
+      a.mono(href="/") Home
+      a.mono(href='/clubs') Clubs
+      a.mono(href='/eBoards') E-Boards
+      a.mono(href='/allPosts') All Posts
+      a.mono(href='/aboutICC') About ICC
+
+      if loggedIn
+        a.mono(href='/addPosts') Add a Post
+        if status=='admin'
+          a.mono(href='/admin') Admin
+        if status=='jsa'
+          a.mono(href='/jsaManage') Manage Club Page
+          a.mono(href='/clubs/jsa') JSA Page
+        a.mono(href='/logout') log Out
+      else
+        a.mono(href='/logins') Club Log In
+        a.mono(href='/allPages') All Pages
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      p.white.footer.mono Michael Leung 2018 (Voice, Web, and Mobile Apps Justice Brandeis Semester)
+    .icon-bar
+      a.facebook(href="https://www.facebook.com/BrandeisICC/")
+        i.fa.fa-facebook
+      a.twitter(href="https://twitter.com/brandeisicc")
+        i.fa.fa-twitter
+      a.google(href="http://www.brandeis.edu/studentlife/icc/")
+        i.fa.fa-google
+      a.linkedin(href="https://www.linkedin.com/school/brandeis-university/")
+        i.fa.fa-linkedin
+      a.youtube(href="https://www.youtube.com/user/BrandeisUniversity")
+        i.fa.fa-youtube
+    span(style='font-size:30px;cursor:pointer' onclick='openNav()') &#x2630;
+
+    block content
+    script.
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+
+      function openNavBAASA() {
+        document.getElementById("BAASA").style.width = "100%";
+      }
+      function closeNavBAASA() {
+        document.getElementById("BAASA").style.width = "0%";
+      }
+
+      function openNavBASO() {
+        document.getElementById("BASO").style.width = "100%";
+      }
+      function closeNavBASO() {
+        document.getElementById("BASO").style.width = "0%";
+      }
+
+      function openNavBBSO() {
+        document.getElementById("BBSO").style.width = "100%";
+      }
+      function closeNavBBSO() {
+        document.getElementById("BBSO").style.width = "0%";
+      }
+
+      function openNavBC3() {
+        document.getElementById("BC3").style.width = "100%";
+      }
+      function closeNavBC3() {
+        document.getElementById("BC3").style.width = "0%";
+      }
+
+      function openNavBKSA() {
+        document.getElementById("BKSA").style.width = "100%";
+      }
+      function closeNavBKSA() {
+        document.getElementById("BKSA").style.width = "0%";
+      }
+
+      function openNavBIEI() {
+        document.getElementById("BIEI").style.width = "100%";
+      }
+      function closeNavBIEI() {
+        document.getElementById("BIEI").style.width = "0%";
+      }
+
+      function openNavCLSO() {
+        document.getElementById("CLSO").style.width = "100%";
+      }
+      function closeNavCLSO() {
+        document.getElementById("CLSO").style.width = "0%";
+      }
+
+      function openNavC2B() {
+        document.getElementById("C2B").style.width = "100%";
+      }
+      function closeNavC2B() {
+        document.getElementById("C2B").style.width = "0%";
+      }
+
+      function openNavCCC() {
+        document.getElementById("CCC").style.width = "100%";
+      }
+      function closeNavCCC() {
+        document.getElementById("CCC").style.width = "0%";
+      }
+
+      function openNavJSA() {
+        document.getElementById("JSA").style.width = "100%";
+      }
+      function closeNavJSA() {
+        document.getElementById("JSA").style.width = "0%";
+      }
+
+      function openNavSACNAS() {
+        document.getElementById("SACNAS").style.width = "100%";
+      }
+      function closeNavSACNAS() {
+        document.getElementById("SACNAS").style.width = "0%";
+      }
+
+      function openNavSASA() {
+        document.getElementById("SASA").style.width = "100%";
+      }
+      function closeNavSASA() {
+        document.getElementById("SASA").style.width = "0%";
+      }
+
+      function openNavSEAC() {
+        document.getElementById("SEAC").style.width = "100%";
+      }
+      function closeNavSEAC() {
+        document.getElementById("SEAC").style.width = "0%";
+      }
+
+      function openNavTRISK() {
+        document.getElementById("TRISK").style.width = "100%";
+      }
+      function closeNavTRISK() {
+        document.getElementById("TRISK").style.width = "0%";
+      }
+
+      function openNavTSA() {
+        document.getElementById("TSA").style.width = "100%";
+      }
+      function closeNavTSA() {
+        document.getElementById("TSA").style.width = "0%";
+      }
+
+      function openNavVSA() {
+        document.getElementById("VSA").style.width = "100%";
+      }
+      function closeNavVSA() {
+        document.getElementById("VSA").style.width = "0%";
+      }
+
+      function openNavWOCA() {
+        document.getElementById("WOCA").style.width = "100%";
+      }
+      function closeNavWOCA() {
+        document.getElementById("WOCA").style.width = "0%";
+      }
+
+    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous")

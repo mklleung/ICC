@@ -1,0 +1,55 @@
+extends layoutBS
+
+block content
+  body
+  .container.blueBC
+    br
+    br
+    form(method="post" action="savePosts")
+      br
+      br
+      textarea(rows='10' cols='30' type="text" name="post" placeholder="post")
+      br
+      br
+      input(type="text" name="name" readonly="true," value=user.googlename)
+      br
+      br
+      input(type="text" name="email" readonly="true," value=user.googleemail)
+      br
+      br
+      select(type='text', name='club')
+            option(value='BAASA') BAASA
+            option(value='BASO') BASO
+            option(value='BBSO') BBSO
+            option(value='BC3') BC3
+            option(value='BKSA') BKSA
+            option(value='BIEI') BIEI
+            option(value='CLSO') CLSO
+            option(value='C2B') C2B
+            option(value='CCC') CCC
+            option(value='JSA') JSA
+            option(value='SACNAS') SACNAS
+            option(value='SASA') SASA
+            option(value='SEAC') SEAC
+            option(value='TRISKELION') TRISKELION
+            option(value='TSA') TSA
+            option(value='VSA') VSA
+            option(value='WOCA') WOCA
+      br
+      br
+      input(type="text" name="position" placeholder="position")
+      br
+      br
+      input(type="text" name="year" placeholder="Graduation year")
+      br
+      br
+      input(type="text" name="postTime" placeholder="Post Time")
+      br
+      br
+      button(type='submit') Submit
+    br
+    br
+    br
+    br
+    br
+    br

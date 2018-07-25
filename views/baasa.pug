@@ -1,0 +1,35 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    .container.whiteBC
+      img.imgCenter(src ='/images/baasa.png')
+    br
+    h2.white.underline Brandeis Asian American Student Association
+    p.white No description
+    a(href='/')
+        i.fa.fa-envelope
+        |  Email List
+    br
+    br
+    a(href='https://www.facebook.com/brandeisaasa/')
+        i.fa.fa-facebook
+        |  Facebook
+    br
+    br
+    p.white.underline All BAASA Posts:
+    ol.white
+      each addPost in addPosts
+        li
+          e #{addPost.postTime}
+          br
+          e #{addPost.club} #{addPost.position} - #{addPost.name} #{addPost.year}
+          br
+          i #{addPost.post}
+          br
+          br
+      br
+    hr
+    br

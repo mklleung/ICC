@@ -1,0 +1,35 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    .container.whiteBC
+      img.imgCenter(src ='/images/bksa.png')
+    br
+    h2.white.underline Brandeis Korean Student Association
+    p.white The Brandeis University Korean Student Association (KSA) aims to promote better understanding of the Korean heritage, culture, language, and concerns around the Brandeis community. KSA strives to increase awareness regarding issues affecting Korean communities in the United States through participation in Korean American conferences, and by conducting cultural and political forums at Brandeis. In addition, the KSA plans social events with other Boston-area colleges to promote networking and community building.
+    a(href='https://lists.brandeis.edu/wws/info/ksa')
+        i.fa.fa-envelope
+        |  Email List
+    br
+    br
+    a(href='https://www.facebook.com/brandeisksa1/?fref=ts')
+        i.fa.fa-facebook
+        |  Facebook
+    br
+    br
+    p.white.underline All BKSA Posts:
+    ol.white
+      each addPost in addPosts
+        li
+          e #{addPost.postTime}
+          br
+          e #{addPost.club} #{addPost.position} - #{addPost.name} #{addPost.year}
+          br
+          i #{addPost.post}
+          br
+          br
+      br
+    hr
+    br

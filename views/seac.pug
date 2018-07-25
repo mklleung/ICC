@@ -1,0 +1,34 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    img.imgCenter(src ='/images/seac.png')
+    br
+    h2.white.underline South East Asia Club
+    p.white The purpose of the Southeast Asia Club is to promote and create awareness of the cultures and traditions of Southeast Asian countries present at Brandeis University. In order to explore the various cultures, we host several events that share the traditions of Southeast Asian countries through games, activities, and food.  We want to create a space that allows for learning, acceptance, and friendship among those who share an interest in Southeast Asia.
+    a(href='https://lists.brandeis.edu/wws/info/seac')
+        i.fa.fa-envelope
+        |  Email List
+    br
+    br
+    a(href='https://www.facebook.com/seacbrandeis')
+        i.fa.fa-facebook
+        |  Facebook
+    br
+    br
+    p.white.underline All SEAC Posts:
+    ol.white
+      each addPost in addPosts
+        li
+          e #{addPost.postTime}
+          br
+          e #{addPost.club} #{addPost.position} - #{addPost.name} #{addPost.year}
+          br
+          i #{addPost.post}
+          br
+          br
+      br
+    hr
+    br
