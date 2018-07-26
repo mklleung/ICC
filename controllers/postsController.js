@@ -21,6 +21,9 @@ exports.renderSEACMain = ( req, res ) => {
 exports.renderBAASAMain = ( req, res ) => {
   res.render( 'baasa');
 };
+exports.renderC2BMain = ( req, res ) => {
+  res.render( 'c2b');
+};
 
 // this displays all of the skills
 exports.getAllPosts = ( req, res ) => {
@@ -112,6 +115,23 @@ exports.attachSEACPosts = ( req, res, next ) => {
 exports.attachBAASAPosts = ( req, res, next ) => {
   console.log('in attachTSAPosts')
   AddPost.find( {club:"BAASA"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
+exports.attachC2BPosts = ( req, res, next ) => {
+  console.log('in attachTSAPosts')
+  AddPost.find( {club:"C2B"} )
     .exec()
     .then( ( addPosts ) => {
       console.log(addPosts)

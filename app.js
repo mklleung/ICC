@@ -104,7 +104,9 @@ app.get('/clubs/seac',
 app.get('/clubs/baasa',
         postsController.attachBAASAPosts,
         postsController.renderBAASAMain)
-
+app.get('/clubs/c2b',
+        postsController.attachC2BPosts,
+        postsController.renderC2BMain)
 
 
 app.get('/addPosts', function(req, res) {
