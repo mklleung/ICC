@@ -1,0 +1,36 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    .container.whiteBC
+      img.imgCenter(src ='/images/baso.jpg')
+    br
+    h2.white.underline Brandeis African Students Organization
+    p.white Brandeis African Students Organization (BASO) at Brandeis University seeks to culturally empower African students and the student body at large to become socially, politically, and critically aware of African Cultures. Our goal is to enter the complexities of Africa as a continent by looking at the diversity of each country, and to understand these diversities through a sociopolitical and sociocultural lens. Through the use of discussions among members, intercultural events, and interactive workshops, myths can be dispelled and dynamic understandings will be revealed. Africa, a continent made up of 54 diverse nations, is not only Uganda, Kenya, Ghana, Congo, Rwanda, Nigeria, and Mali, but also the many countries that constitute her very essence. BASO additionally aims to spearhead various community projects both within the US as well as projects geared towards giving back to Africa and contributing towards solving some of the continent's most enduring challenges. Despite the overarching goal, even if this club leaves some with only a glimpse of Africa- the food, the music, a language - we hope to ultimately to leave the Brandeis community with an enduring and magnificent insight into a continent of many but a place of one.
+    a(href='https://lists.brandeis.edu/wws/info/baso')
+        i.fa.fa-envelope
+        |  Email List
+    br
+    br
+    a(href='https://www.facebook.com/Brandeis-African-Students-Organization-BASO-141391625927124/?fref=ts')
+        i.fa.fa-facebook
+        |  Facebook
+    br
+    br
+    p.white.underline All BASO Posts:
+    ol.white
+      each addPost in addPosts
+        li
+          e #{addPost.postTime}
+          br
+          e #{addPost.club} #{addPost.position} - #{addPost.name} #{addPost.year}
+          br
+          h2 #{addPost.title}
+          i #{addPost.post}
+          br
+          br
+      br
+    hr
+    br

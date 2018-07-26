@@ -64,12 +64,60 @@ app.use((req,res,next) => {
     res.locals.user = req.user
     res.locals.loggedIn = true
     if (req.user) {
-      if (req.user.googleemail=='mkleung@brandeis.edu') {
+      if (req.user.googleemail=='michaelleung360@gmail.com') {
         console.log("admin has logged in")
         res.locals.status='admin'
-      } else if(req.user.googleemail=='michaelleung360@gmail.com'){
+      } else if(req.user.googleemail=='mkleung@brandeis.edu'){
         console.log("jsa has logged in")
         res.locals.status='jsa'
+      } else if(req.user.googleemail=='baasa@brandeis.edu'){
+        console.log("baasa has logged in")
+        res.locals.status='baasa'
+      } else if(req.user.googleemail=='baso@brandeis.edu'){
+        console.log("baso has logged in")
+        res.locals.status='baso'
+      } else if(req.user.googleemail=='bbso@brandeis.edu'){
+        console.log("bbso has logged in")
+        res.locals.status='bbso'
+      } else if(req.user.googleemail=='bc3@brandeis.edu'){
+        console.log("bc3 has logged in")
+        res.locals.status='bc3'
+      } else if(req.user.googleemail=='bksa@brandeis.edu'){
+        console.log("bksa has logged in")
+        res.locals.status='bksa'
+      } else if(req.user.googleemail=='biei@brandeis.edu'){
+        console.log("biei has logged in")
+        res.locals.status='biei'
+      } else if(req.user.googleemail=='blso@brandeis.edu'){
+        console.log("blso has logged in")
+        res.locals.status='blso'
+      } else if(req.user.googleemail=='c2b@brandeis.edu'){
+        console.log("c2b has logged in")
+        res.locals.status='c2b'
+      } else if(req.user.googleemail=='ccc@brandeis.edu'){
+        console.log("ccc has logged in")
+        res.locals.status='ccc'
+      } else if(req.user.googleemail=='sacnas@brandeis.edu'){
+        console.log("sacnas has logged in")
+        res.locals.status='sacnas'
+      } else if(req.user.googleemail=='sasa@brandeis.edu'){
+        console.log("sasa has logged in")
+        res.locals.status='sasa'
+      } else if(req.user.googleemail=='seac@brandeis.edu'){
+        console.log("seac has logged in")
+        res.locals.status='seac'
+      } else if(req.user.googleemail=='trisk@brandeis.edu'){
+        console.log("trisk has logged in")
+        res.locals.status='trisk'
+      } else if(req.user.googleemail=='tsa@brandeis.edu'){
+        console.log("tsa has logged in")
+        res.locals.status='tsa'
+      } else if(req.user.googleemail=='vsa@brandeis.edu'){
+        console.log("vsa has logged in")
+        res.locals.status='vsa'
+      } else if(req.user.googleemail=='woca@brandeis.edu'){
+        console.log("woca has logged in")
+        res.locals.status='woca'
       } else {
         console.log('user has logged in')
         res.locals.status = 'user'
@@ -125,6 +173,22 @@ app.get('/clubs/trisk',
 app.get('/clubs/woca',
         postsController.attachWOCAPosts,
         postsController.renderWOCAMain)
+app.get('/clubs/baso',
+        postsController.attachBASOPosts,
+        postsController.renderBASOMain)
+app.get('/clubs/bbso',
+        postsController.attachBBSOPosts,
+        postsController.renderBBSOMain)
+app.get('/clubs/bc3',
+        postsController.attachBC3Posts,
+        postsController.renderBC3Main)
+app.get('/clubs/biei',
+        postsController.attachBIEIPosts,
+        postsController.renderBIEIMain)
+app.get('/clubs/blso',
+        postsController.attachBLSOPosts,
+        postsController.renderBLSOMain)
+
 
 
 app.get('/addPosts', function(req, res) {

@@ -42,6 +42,21 @@ exports.renderWOCAMain = ( req, res ) => {
 exports.renderCCCMain = ( req, res ) => {
   res.render( 'ccc');
 };
+exports.renderBASOMain = ( req, res ) => {
+  res.render( 'baso');
+};
+exports.renderBBSOMain = ( req, res ) => {
+  res.render( 'bbso');
+};
+exports.renderBIEIMain = ( req, res ) => {
+  res.render( 'biei');
+};
+exports.renderBC3Main = ( req, res ) => {
+  res.render( 'bc3');
+};
+exports.renderBLSOMain = ( req, res ) => {
+  res.render( 'blso');
+};
 
 
 
@@ -279,7 +294,91 @@ exports.attachTRISKPosts = ( req, res, next ) => {
       console.log( 'attachPosts promise complete' );
     } );
 };
-
+exports.attachBBSOPosts = ( req, res, next ) => {
+  console.log('in attachBBSOPosts')
+  AddPost.find( {club:"BBSO"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
+exports.attachBASOPosts = ( req, res, next ) => {
+  console.log('in attachBASOPosts')
+  AddPost.find( {club:"BASO"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
+exports.attachBC3Posts = ( req, res, next ) => {
+  console.log('in attachBC3Posts')
+  AddPost.find( {club:"BC3"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
+exports.attachBIEIPosts = ( req, res, next ) => {
+  console.log('in attachBIEIPosts')
+  AddPost.find( {club:"BIEI"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
+exports.attachBLSOPosts = ( req, res, next ) => {
+  console.log('in attachBLSOPosts')
+  AddPost.find( {club:"BLSO"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
 
 
 

@@ -1,0 +1,36 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    .container.whiteBC
+      img.imgCenter(src ='/images/blso.png')
+    br
+    h2.white.underline Brandeis Latinx Students Organization
+    p.white Brandeis Latinx Student Organization founded as AHORA! in 1998 in the Intercultural Center, is a student-run organization whose purpose is to provide social, academic, and emotional support for the Latinx community. With various educational events throughout the year, BLSO aims to enlighten all who are interested in Latinx culture, history, and current events. We seek to provide and maintain a safe space for all Latinx students to reflect and discuss concerns surrounding the Latinx community and our families. Furthermore, we strive to promote all aspects of the Latinx culture to unite the Brandeis community. Building upon Brandeis’ legacy of social justice we seek to hold the university accountable and address the concerns and demands of our community.
+    a(href='https://lists.brandeis.edu/wws/info/ahora')
+        i.fa.fa-envelope
+        |  Email List
+    br
+    br
+    a(href='https://www.facebook.com/BrandeisLSO/')
+        i.fa.fa-facebook
+        |  Facebook
+    br
+    br
+    p.white.underline All BLSO Posts:
+    ol.white
+      each addPost in addPosts
+        li
+          e #{addPost.postTime}
+          br
+          e #{addPost.club} #{addPost.position} - #{addPost.name} #{addPost.year}
+          br
+          h2 #{addPost.title}
+          i #{addPost.post}
+          br
+          br
+      br
+    hr
+    br
