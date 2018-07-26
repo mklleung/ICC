@@ -8,7 +8,10 @@ block content
     form(method="post" action="savePosts")
       br
       br
-      textarea(rows='10' cols='30' type="text" name="post" placeholder="post")
+      input(type="text" name="title" placeholder="Post Title")
+      br
+      br
+      textarea(rows='10' cols='30' type="text" name="post" placeholder="Write the post here!")
       br
       br
       input(type="text" name="name" readonly="true," value=user.googlename)
@@ -37,13 +40,13 @@ block content
             option(value='WOCA') WOCA
       br
       br
-      input(type="text" name="position" placeholder="position")
+      input(type="text" name="position" placeholder="Your Position")
       br
       br
-      input(type="text" name="year" placeholder="Graduation year")
+      input(type="text" name="year" placeholder="Graduation Year")
       br
       br
-      input(type="text" name="postTime" placeholder="Post Time")
+      input(type="text" name="postTime" placeholder="Today's Date")
       br
       br
       button(type='submit') Submit

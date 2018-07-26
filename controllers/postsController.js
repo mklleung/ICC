@@ -130,6 +130,7 @@ exports.savePosts = ( req, res ) => {
   console.log("in savePosts!")
   console.dir(req)
   let newPost = new AddPost( {
+    title: req.body.title,
     post:req.body.post,
     name: req.body.name,
     email: req.body.email,
