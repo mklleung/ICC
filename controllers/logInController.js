@@ -1,5 +1,5 @@
 'use strict';
-const Login = require( '../models/LogIn' );
+const Login = require( '../models/Login' );
 console.log("loading the login Controller")
 
 
