@@ -107,6 +107,24 @@ app.get('/clubs/baasa',
 app.get('/clubs/c2b',
         postsController.attachC2BPosts,
         postsController.renderC2BMain)
+app.get('/clubs/ccc',
+        postsController.attachCCCPosts,
+        postsController.renderCCCMain)
+app.get('/clubs/vsa',
+        postsController.attachVSAPosts,
+        postsController.renderVSAMain)
+app.get('/clubs/sasa',
+        postsController.attachSASAPosts,
+        postsController.renderSASAMain)
+app.get('/clubs/sacnas',
+        postsController.attachSACNASPosts,
+        postsController.renderSACNASMain)
+app.get('/clubs/trisk',
+        postsController.attachTRISKPosts,
+        postsController.renderTRISKMain)
+app.get('/clubs/woca',
+        postsController.attachWOCAPosts,
+        postsController.renderWOCAMain)
 
 
 app.get('/addPosts', function(req, res) {

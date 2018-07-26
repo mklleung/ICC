@@ -1,0 +1,36 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    .container.whiteBC
+      img.imgCenter(src ='/images/vsa.png')
+    br
+    h2.white.underline Vietnamese Students Association
+    p.white The Vietnamese Students Association seeks to empower the Vietnamese community at Brandeis University and the Boston area college network through cultural and traditional understanding of Vietnamese heritage, political awareness of Vietnam’s unique and nuanced immigration history, and through the cultivation of a unique sense of pride for Vietnamese identity.
+    a(href='https://lists.brandeis.edu/wws/info/vsa')
+        i.fa.fa-envelope
+        |  Email List
+    br
+    br
+    a(href='https://www.facebook.com/')
+        i.fa.fa-facebook
+        |  Facebook
+    br
+    br
+    p.white.underline All VSA Posts:
+    ol.white
+      each addPost in addPosts
+        li
+          e #{addPost.postTime}
+          br
+          e #{addPost.club} #{addPost.position} - #{addPost.name} #{addPost.year}
+          br
+          h2 #{addPost.title}
+          i #{addPost.post}
+          br
+          br
+      br
+    hr
+    br

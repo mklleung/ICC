@@ -24,6 +24,30 @@ exports.renderBAASAMain = ( req, res ) => {
 exports.renderC2BMain = ( req, res ) => {
   res.render( 'c2b');
 };
+exports.renderSACNASMain = ( req, res ) => {
+  res.render( 'sacnas');
+};
+exports.renderSASAMain = ( req, res ) => {
+  res.render( 'sasa');
+};
+exports.renderVSAMain = ( req, res ) => {
+  res.render( 'vsa');
+};
+exports.renderTRISKMain = ( req, res ) => {
+  res.render( 'trisk');
+};
+exports.renderWOCAMain = ( req, res ) => {
+  res.render( 'woca');
+};
+exports.renderCCCMain = ( req, res ) => {
+  res.render( 'ccc');
+};
+
+
+
+
+
+
 
 // this displays all of the skills
 exports.getAllPosts = ( req, res ) => {
@@ -43,6 +67,13 @@ exports.getAllPosts = ( req, res ) => {
       console.log( 'addPost promise complete' );
     } );
 };
+
+
+
+
+
+
+
 
 exports.attachJSAPosts = ( req, res, next ) => {
   console.log('in attachJSAPosts')
@@ -79,7 +110,7 @@ exports.attachTSAPosts = ( req, res, next ) => {
     } );
 };
 exports.attachBKSAPosts = ( req, res, next ) => {
-  console.log('in attachTSAPosts')
+  console.log('in attachBKSAPosts')
   AddPost.find( {club:"BKSA"} )
     .exec()
     .then( ( addPosts ) => {
@@ -96,7 +127,7 @@ exports.attachBKSAPosts = ( req, res, next ) => {
     } );
 };
 exports.attachSEACPosts = ( req, res, next ) => {
-  console.log('in attachTSAPosts')
+  console.log('in attachSEACPosts')
   AddPost.find( {club:"SEAC"} )
     .exec()
     .then( ( addPosts ) => {
@@ -113,7 +144,7 @@ exports.attachSEACPosts = ( req, res, next ) => {
     } );
 };
 exports.attachBAASAPosts = ( req, res, next ) => {
-  console.log('in attachTSAPosts')
+  console.log('in attachBAASAPosts')
   AddPost.find( {club:"BAASA"} )
     .exec()
     .then( ( addPosts ) => {
@@ -130,7 +161,7 @@ exports.attachBAASAPosts = ( req, res, next ) => {
     } );
 };
 exports.attachC2BPosts = ( req, res, next ) => {
-  console.log('in attachTSAPosts')
+  console.log('in attachC2BPosts')
   AddPost.find( {club:"C2B"} )
     .exec()
     .then( ( addPosts ) => {
@@ -146,6 +177,115 @@ exports.attachC2BPosts = ( req, res, next ) => {
       console.log( 'attachPosts promise complete' );
     } );
 };
+exports.attachCCCPosts = ( req, res, next ) => {
+  console.log('in attachCCCPosts')
+  AddPost.find( {club:"CCC"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
+exports.attachSACNASPosts = ( req, res, next ) => {
+  console.log('in attachSACNASPosts')
+  AddPost.find( {club:"SACNAS"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
+exports.attachWOCAPosts = ( req, res, next ) => {
+  console.log('in attachWOCAPosts')
+  AddPost.find( {club:"WOCA"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
+exports.attachVSAPosts = ( req, res, next ) => {
+  console.log('in attachVSAPosts')
+  AddPost.find( {club:"VSA"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
+exports.attachSASAPosts = ( req, res, next ) => {
+  console.log('in attachSASAPosts')
+  AddPost.find( {club:"SASA"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
+exports.attachTRISKPosts = ( req, res, next ) => {
+  console.log('in attachTRISKPosts')
+  AddPost.find( {club:"TRISK"} )
+    .exec()
+    .then( ( addPosts ) => {
+      console.log(addPosts)
+      res.locals.addPosts = addPosts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachPosts promise complete' );
+    } );
+};
+
+
+
+
+
+
+
 exports.savePosts = ( req, res ) => {
   console.log("in savePosts!")
   console.dir(req)
@@ -170,6 +310,10 @@ exports.savePosts = ( req, res ) => {
       res.send( error );
     } );
 };
+
+
+
+
 
 exports.deletePost = (req, res) => {
   console.log("in deletePost")

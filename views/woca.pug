@@ -1,0 +1,36 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    .container.whiteBC
+      img.imgCenter(src ='/images/woca.png')
+    br
+    h2.white.underline Women of Color Alliance
+    p.white The purpose of the Women of Color Alliance club is to create a safe space for all women of color. WOCA has weekly meetings in which WOCA strives to establish bonds of solidarity among undergraduate Women of Color. By uniting all different identities WOCA will provide a form of conversation that is unique to the Brandeis community. WOCA is committed to dismantling barriers by uniting women of all races, class, sexual orientation and religion. WOCA strives to create a community that honors the experiences of various women of color.
+    a(href='https://lists.brandeis.edu/wws/info/w.o.c.a.')
+        i.fa.fa-envelope
+        |  Email List
+    br
+    br
+    a(href='https://www.facebook.com/brandeiswomenofcoloralliance/')
+        i.fa.fa-facebook
+        |  Facebook
+    br
+    br
+    p.white.underline All WOCA Posts:
+    ol.white
+      each addPost in addPosts
+        li
+          e #{addPost.postTime}
+          br
+          e #{addPost.club} #{addPost.position} - #{addPost.name} #{addPost.year}
+          br
+          h2 #{addPost.title}
+          i #{addPost.post}
+          br
+          br
+      br
+    hr
+    br

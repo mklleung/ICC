@@ -1,0 +1,36 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    .container.whiteBC
+      img.imgCenter(src ='/images/ccc.png')
+    br
+    h2.white.underline Caribbean Cultural Club
+    p.white The purpose of the Caribbean Cultural Club is: a) To allow all Brandeis University students who were born and/or raised in the Caribbean, are of Caribbean descent, has interest in, or the desire to learn about Caribbean culture and society, to extend their interests to the Brandeis University student population b) To create and foster a spirit of understanding among students of Caribbean origin or descent c) To cement the bonds of friendship among students of Caribbean origin or descent d) To provide factual information about the Caribbean in order to eradicate assumptions and stereotypes. The club intends to do all of the aforementioned through discussions and information sessions, festivals and fundraisers, as well as artistic displays of Caribbean culture.
+    a(href='https://lists.brandeis.edu/wws/info/cccmembers')
+        i.fa.fa-envelope
+        |  Email List
+    br
+    br
+    a(href='https://www.facebook.com/Brandeis-Caribbean-Cultural-Club-879277692156395/?fref=ts')
+        i.fa.fa-facebook
+        |  Facebook
+    br
+    br
+    p.white.underline All CCC Posts:
+    ol.white
+      each addPost in addPosts
+        li
+          e #{addPost.postTime}
+          br
+          e #{addPost.club} #{addPost.position} - #{addPost.name} #{addPost.year}
+          br
+          h2 #{addPost.title}
+          i #{addPost.post}
+          br
+          br
+      br
+    hr
+    br

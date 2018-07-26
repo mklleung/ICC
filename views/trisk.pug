@@ -1,0 +1,36 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    .container.whiteBC
+      img.imgCenter(src ='/images/trisk.png')
+    br
+    h2.white.underline Triskelion (The GLBTQSA Alliance)
+    p.white Triskelion (hereinafter also referred to as “Trisk”) is the chartered umbrella organization for the support and enrichment of Brandeis’s lesbian, gay, bisexual, transgender, queer (LGBTQ), and allied community. Trisk’s purpose is to foster and perpetuate an environment, both within Brandeis and in the greater community, of acceptance, support, understanding and equality with regard to sexual orientation and gender identity/expression. This is to be accomplished through advocacy, activism, social events, creating and maintaining “safe spaces,” as well as both referring to and utilizing other relevant campus resources, such as the Program Coordinator for Sexuality and Gender Diversity, the Queer Resource Center (QRC), and Shalem.
+    a(href='https://lists.brandeis.edu/wws/info/trisk')
+        i.fa.fa-envelope
+        |  Email List
+    br
+    br
+    a(href='https://www.facebook.com/groups/2200021776/')
+        i.fa.fa-facebook
+        |  Facebook
+    br
+    br
+    p.white.underline All Triskelion Posts:
+    ol.white
+      each addPost in addPosts
+        li
+          e #{addPost.postTime}
+          br
+          e #{addPost.club} #{addPost.position} - #{addPost.name} #{addPost.year}
+          br
+          h2 #{addPost.title}
+          i #{addPost.post}
+          br
+          br
+      br
+    hr
+    br
