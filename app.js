@@ -38,7 +38,8 @@ var app = express();
 
 // here is where we connect to the database!
 const mongoose = require( 'mongoose' );
-mongoose.connect( 'mongodb://localhost/icc' );
+mongoose.connect( 'mongodb://user1:testtest1@ds141641.mlab.com:41641/icc-brandeis' );
+//mongoose.connect( 'mongodb://localhost/icc' );
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
