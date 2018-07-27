@@ -2,6 +2,9 @@ const
   logInController = require('./controllers/logInController')
   allPostsController = require('./controllers/allPostsController')
   postsController = require('./controllers/postsController')
+  membersController = require('./controllers/membersController')
+
+  Members = require( './models/Members' );
 
 
   createError = require('http-errors');
@@ -18,6 +21,7 @@ const
   aboutICCRouter = require('./routes/aboutICC');
   clubsRouter = require('./routes/clubs');
   eBoardsRouter = require('./routes/eBoards');
+
 
 
 
@@ -45,6 +49,7 @@ db.once('open', function() {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+
 //middleware to process the req object and make it more useful!
 app.use(logger('dev'));
 app.use(express.json());
@@ -66,58 +71,58 @@ app.use((req,res,next) => {
     if (req.user) {
       if (req.user.googleemail=='michaelleung360@gmail.com') {
         console.log("admin has logged in")
-        res.locals.status='admin'
+        res.locals.status='ADMIN'
       } else if(req.user.googleemail=='mkleung@brandeis.edu'){
         console.log("jsa has logged in")
-        res.locals.status='jsa'
+        res.locals.status='JSA'
       } else if(req.user.googleemail=='baasa@brandeis.edu'){
         console.log("baasa has logged in")
-        res.locals.status='baasa'
+        res.locals.status='BAASA'
       } else if(req.user.googleemail=='baso@brandeis.edu'){
         console.log("baso has logged in")
-        res.locals.status='baso'
+        res.locals.status='BASO'
       } else if(req.user.googleemail=='bbso@brandeis.edu'){
         console.log("bbso has logged in")
-        res.locals.status='bbso'
+        res.locals.status='BBSO'
       } else if(req.user.googleemail=='bc3@brandeis.edu'){
         console.log("bc3 has logged in")
-        res.locals.status='bc3'
+        res.locals.status='BC3'
       } else if(req.user.googleemail=='bksa@brandeis.edu'){
         console.log("bksa has logged in")
-        res.locals.status='bksa'
+        res.locals.status='BKSA'
       } else if(req.user.googleemail=='biei@brandeis.edu'){
         console.log("biei has logged in")
-        res.locals.status='biei'
+        res.locals.status='BIEI'
       } else if(req.user.googleemail=='blso@brandeis.edu'){
         console.log("blso has logged in")
         res.locals.status='blso'
       } else if(req.user.googleemail=='c2b@brandeis.edu'){
         console.log("c2b has logged in")
-        res.locals.status='c2b'
+        res.locals.status='C2B'
       } else if(req.user.googleemail=='ccc@brandeis.edu'){
         console.log("ccc has logged in")
-        res.locals.status='ccc'
+        res.locals.status='CCC'
       } else if(req.user.googleemail=='sacnas@brandeis.edu'){
         console.log("sacnas has logged in")
-        res.locals.status='sacnas'
+        res.locals.status='SACNAS'
       } else if(req.user.googleemail=='sasa@brandeis.edu'){
         console.log("sasa has logged in")
-        res.locals.status='sasa'
+        res.locals.status='SASA'
       } else if(req.user.googleemail=='seac@brandeis.edu'){
         console.log("seac has logged in")
-        res.locals.status='seac'
+        res.locals.status='SEAC'
       } else if(req.user.googleemail=='trisk@brandeis.edu'){
         console.log("trisk has logged in")
-        res.locals.status='trisk'
+        res.locals.status='TRISK'
       } else if(req.user.googleemail=='tsa@brandeis.edu'){
         console.log("tsa has logged in")
-        res.locals.status='tsa'
+        res.locals.status='TSA'
       } else if(req.user.googleemail=='vsa@brandeis.edu'){
         console.log("vsa has logged in")
-        res.locals.status='vsa'
+        res.locals.status='VSA'
       } else if(req.user.googleemail=='woca@brandeis.edu'){
         console.log("woca has logged in")
-        res.locals.status='woca'
+        res.locals.status='WOCA'
       } else {
         console.log('user has logged in')
         res.locals.status = 'user'
@@ -132,6 +137,7 @@ app.use('/about', aboutRouter);
 app.use('/aboutICC', aboutICCRouter);
 app.use('/clubs', clubsRouter);
 app.use('/eBoards', eBoardsRouter);
+
 app.get('/allPosts', allPostsController.getAllPosts );
 app.get('/admin',
         allPostsController.getAllPostsAdmin);
@@ -190,11 +196,10 @@ app.get('/clubs/blso',
         postsController.renderBLSOMain)
 
 
-
 app.get('/addPosts', function(req, res) {
       console.log(`req.user = ${req.user}`)
         res.render('addPosts', {
-            user : req.user // get the user out of session and pass to template
+            user : req.user
         });
     });
 //app.get('/addPosts',isLoggedIn,postsController.getAllPosts );
@@ -204,6 +209,11 @@ app.use('/addPosts', function(req, res, next) {
   console.log("in / controller")
   res.render('addPosts', { title: 'ICC' });
 });
+app.get('/members',  membersController.renderMembers)
+app.post('/saveMember',membersController.saveMember );
+app.get('/allMembers',
+    membersController.getAllMembers,
+    membersController.renderAllMembers);
 
 
 app.get('/loginerror', function(req,res){

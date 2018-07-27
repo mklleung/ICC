@@ -23,77 +23,99 @@ html(lang="en")
       a.mono(href='/aboutICC') About ICC
 
       if loggedIn
-        a.mono(href='/addPosts') Add a Post
-        if status=='admin'
+        if status=='ADMIN'
           a.mono(href='/admin') Admin
-        if status=='jsa'
-          a.mono(href='/jsaManage') Manage Club Page
+          a.mono(href='/allMembers') All Members
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='JSA'
           a.mono(href='/clubs/jsa') JSA Page
-        if status=='baasa'
-          a.mono(href='/baasaManage') Manage Club Page
+          a.mono(href='/jsaManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='BAASA'
           a.mono(href='/clubs/baasa') BAASA Page
-        if status=='baso'
-          a.mono(href='/basoManage') Manage Club Page
+          a.mono(href='/baasaManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='BASO'
           a.mono(href='/clubs/baso') BASO Page
-        if status=='bbso'
-          a.mono(href='/bbsoManage') Manage Club Page
+          a.mono(href='/basoManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='BBSO'
           a.mono(href='/clubs/bbso') BBSO Page
-        if status=='bc3'
-          a.mono(href='/bc3Manage') Manage Club Page
+          a.mono(href='/bbsoManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='BC3'
           a.mono(href='/clubs/bc3') BC3 Page
-        if status=='bksa'
-          a.mono(href='/bksaManage') Manage Club Page
+          a.mono(href='/bc3Manage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='BKSA'
           a.mono(href='/clubs/bksa') BKSA Page
-        if status=='biei'
-          a.mono(href='/bieiManage') Manage Club Page
+          a.mono(href='/bksaManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='BIEI'
           a.mono(href='/clubs/biei') BIEI Page
-        if status=='blso'
-          a.mono(href='/blsoManage') Manage Club Page
+          a.mono(href='/bieiManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='BLSO'
           a.mono(href='/clubs/blso') BLSO Page
-        if status=='c2b'
-          a.mono(href='/c2bManage') Manage Club Page
+          a.mono(href='/blsoManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='C2B'
           a.mono(href='/clubs/c2b') C2B Page
-        if status=='ccc'
-          a.mono(href='/cccManage') Manage Club Page
+          a.mono(href='/c2bManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='CCC'
           a.mono(href='/clubs/ccc') CCC Page
-        if status=='sacnas'
-          a.mono(href='/sacnasManage') Manage Club Page
+          a.mono(href='/cccManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='SACNAS'
           a.mono(href='/clubs/sacnas') SACNAS Page
-        if status=='sasa'
-          a.mono(href='/sasaManage') Manage Club Page
+          a.mono(href='/sacnasManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='SASA'
           a.mono(href='/clubs/sasa') SASA Page
-        if status=='seac'
-          a.mono(href='/seacManage') Manage Club Page
+          a.mono(href='/sasaManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='SEAC'
           a.mono(href='/clubs/seac') SEAC Page
-        if status=='trisk'
-          a.mono(href='/triskManage') Manage Club Page
+          a.mono(href='/seacManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='TRISK'
           a.mono(href='/clubs/trisk') TRISK Page
-        if status=='tsa'
-          a.mono(href='/tsaManage') Manage Club Page
+          a.mono(href='/triskManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='TSA'
           a.mono(href='/clubs/tsa') TSA Page
-        if status=='vsa'
-          a.mono(href='/vsaManage') Manage Club Page
+          a.mono(href='/tsaManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='VSA'
           a.mono(href='/clubs/vsa') VSA Page
-        if status=='woca'
-          a.mono(href='/wocaManage') Manage Club Page
+          a.mono(href='/vsaManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
+        if status=='WOCA'
           a.mono(href='/clubs/woca') WOCA Page
+          a.mono(href='/wocaManage') Manage Club Page
+          a.mono(href='/members') Add E-Board Member
+          a.mono(href='/addPosts') Add a Post
         a.mono(href='/logout') log Out
       else
         a.mono(href='/logins') Club Log In
-        a.mono(href='/allPages') All Pages
-      br
-      br
-      br
-      br
-      br
-      br
-      br
-      br
-      br
-      br
-      br
-      br
-      br
       br
       p.white.footer.mono Michael Leung 2018 (Voice, Web, and Mobile Apps Justice Brandeis Semester)
     .icon-bar

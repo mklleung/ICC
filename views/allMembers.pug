@@ -1,0 +1,15 @@
+extends layoutBS
+
+block content
+  body
+  .container.blueBC
+    br
+    h3.white.underline All active members on site
+    br
+    ol.white
+      each m in members
+        li
+          e #{m.name} | #{m.email} | #{m.club} | #{m.position} | #{m.year}
+          br
+      br
+    hr

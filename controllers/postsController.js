@@ -64,7 +64,6 @@ exports.renderBLSOMain = ( req, res ) => {
 
 
 
-// this displays all of the skills
 exports.getAllPosts = ( req, res ) => {
   console.log('in getAllPosts')
   AddPost.find( {} )
@@ -411,30 +410,27 @@ exports.savePosts = ( req, res ) => {
 };
 
 
-
-
-
 exports.deletePost = (req, res) => {
   console.log("in deletePost")
-  let addPostName = req.body.deleteName
-  if (typeof(addPostName)=='string') {
-      console.log("in first if statement")
-      AddPost.deleteOne({name:addPostName})
+  let postName = req.body.deletePost
+  console.log("This is what postName:" + postName)
+  if (typeof(postName)=='string') {
+      AddPost.deleteOne({name:postName})
+           .then(()=>{res.redirect('/admin')})
+           .catch((error)=>{res.send(error)})
+      console.log("chose one")
+  } else if (typeof(postName)=='object'){
+      AddPost.deleteMany({name:{$in:postName}})
            .exec()
            .then(()=>{res.redirect('/admin')})
            .catch((error)=>{res.send(error)})
-  } else if (typeof(addPostName)=='object'){
-      console.log("in second if statement")
-      AddPost.deleteMany({value:{$in:addPostName}})
-           .exec()
-           .then(()=>{res.redirect('/admin')})
-           .catch((error)=>{res.send(error)})
-  } else if (typeof(addPostName)=='undefined'){
+      console.log("chose more than one")
+  } else if (typeof(postName)=='undefined'){
       console.log("This is if they didn't select a post")
       res.redirect('/admin')
   } else {
     console.log("This shouldn't happen!")
-    res.send(`unknown addPostName: ${addPostName}`)
+    res.send(`unknown postName: ${postName}`)
   }
 
 };
