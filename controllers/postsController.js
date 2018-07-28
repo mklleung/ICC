@@ -411,26 +411,23 @@ exports.savePosts = ( req, res ) => {
 
 
 exports.deletePost = (req, res) => {
-  console.log("in deletePost")
+  console.log("in deleteWorkout")
   let postName = req.body.deletePost
-  console.log("This is what postName:" + postName)
   if (typeof(postName)=='string') {
-      AddPost.deleteOne({name:postName})
-           .then(()=>{res.redirect('/admin')})
-           .catch((error)=>{res.send(error)})
-      console.log("chose one")
-  } else if (typeof(postName)=='object'){
-      AddPost.deleteMany({name:{$in:postName}})
+      AddPost.deleteOne({_id:postName})
            .exec()
            .then(()=>{res.redirect('/admin')})
            .catch((error)=>{res.send(error)})
-      console.log("chose more than one")
+  } else if (typeof(postName)=='object'){
+      AddPost.deleteMany({_id:{$in:postName}})
+           .exec()
+           .then(()=>{res.redirect('/admin')})
+           .catch((error)=>{res.send(error)})
   } else if (typeof(postName)=='undefined'){
       console.log("This is if they didn't select a post")
       res.redirect('/admin')
   } else {
     console.log("This shouldn't happen!")
     res.send(`unknown postName: ${postName}`)
-  }
-
+   }
 };
