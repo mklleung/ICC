@@ -411,7 +411,7 @@ exports.savePosts = ( req, res ) => {
 
 
 exports.deletePost = (req, res) => {
-  console.log("in deleteWorkout")
+  console.log("in deletePost")
   let postName = req.body.deletePost
   if (typeof(postName)=='string') {
       AddPost.deleteOne({_id:postName})

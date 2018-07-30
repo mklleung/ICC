@@ -9,7 +9,7 @@ block content
       ol
         each p in addPosts
           li
-            input(name="deletePost" value=p.value type="checkbox")
+            input(name="deletePost" value=p._id type="checkbox")
             e   #{p.post}  |
             i   #{p.name}  |
             e   #{p.email}  |
