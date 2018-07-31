@@ -1,0 +1,19 @@
+extends layoutBS
+
+block content
+  .container.blueBC
+    br
+    hr
+    h2.white Delete Members
+    form.leftBorder.white(method="post" action="deleteMember")
+      ol
+        each p in members
+          li
+            input(name="deleteMember" value=p._id type="checkbox")
+            e   #{p.name}  |
+            i   #{p.email}  |
+            e   #{p.club}  |
+            i   #{p.position}  |
+            e   #{p.year}  
+      input(type="submit" value="Delete checked items")
+    br

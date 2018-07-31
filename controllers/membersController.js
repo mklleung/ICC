@@ -28,6 +28,25 @@ exports.getAllMembers = ( req, res ) => {
     } );
 };
 
+// this displays all of the members
+exports.getAllMembersAdmin = ( req, res ) => {
+  console.log('in getAllMembers')
+  Members.find( {} )
+    .exec()
+    .then( ( members ) => {
+      res.render( 'adminMembers', {
+        members: members
+      } );
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'AllMembers promise complete' );
+    } );
+};
+
 
 
  exports.attachMembers = ( req, res, next ) => {
@@ -80,23 +99,20 @@ exports.deleteMember = (req, res) => {
   console.log("in deleteMember")
   let memberName = req.body.deleteMember
   if (typeof(memberName)=='string') {
-      console.log("in first if statement")
-      Member.deleteOne({name:memberName})
+      Members.deleteOne({_id:memberName})
            .exec()
-           .then(()=>{res.redirect('/members')})
+           .then(()=>{res.redirect('/adminMembers')})
            .catch((error)=>{res.send(error)})
   } else if (typeof(memberName)=='object'){
-      console.log("in second if statement")
-      Member.deleteMany({value:{$in:memberName}})
+      Members.deleteMany({_id:{$in:memberName}})
            .exec()
-           .then(()=>{res.redirect('/members')})
+           .then(()=>{res.redirect('/adminMembers')})
            .catch((error)=>{res.send(error)})
   } else if (typeof(memberName)=='undefined'){
-      console.log("This is if they didn't select a member")
-      res.redirect('/members')
+      console.log("This is if they didn't select a post")
+      res.redirect('/adminMembers')
   } else {
     console.log("This shouldn't happen!")
     res.send(`unknown memberName: ${memberName}`)
-  }
-
+   }
 };

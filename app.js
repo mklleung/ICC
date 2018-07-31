@@ -142,7 +142,8 @@ app.use('/eBoards', eBoardsRouter);
 app.get('/allPosts', allPostsController.getAllPosts );
 app.get('/admin',
         allPostsController.getAllPostsAdmin);
-
+app.get('/adminMembers',
+        membersController.getAllMembersAdmin);
 
 app.get('/clubs/jsa',
         postsController.attachJSAPosts,
@@ -299,6 +300,7 @@ app.get('/addPosts', function(req, res) {
 //app.get('/addPosts',isLoggedIn,postsController.getAllPosts );
 app.post('/savePosts',postsController.savePosts );
 app.post('/deletePost',postsController.deletePost );
+app.post('/deleteMember',membersController.deleteMember );
 app.use('/addPosts', function(req, res, next) {
   console.log("in / controller")
   res.render('addPosts', { title: 'ICC' });
