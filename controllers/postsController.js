@@ -416,16 +416,16 @@ exports.deletePost = (req, res) => {
   if (typeof(postName)=='string') {
       AddPost.deleteOne({_id:postName})
            .exec()
-           .then(()=>{res.redirect('/admin')})
+           .then(()=>{res.redirect('/')})
            .catch((error)=>{res.send(error)})
   } else if (typeof(postName)=='object'){
       AddPost.deleteMany({_id:{$in:postName}})
            .exec()
-           .then(()=>{res.redirect('/admin')})
+           .then(()=>{res.redirect('/')})
            .catch((error)=>{res.send(error)})
   } else if (typeof(postName)=='undefined'){
       console.log("This is if they didn't select a post")
-      res.redirect('/admin')
+      res.redirect('/')
   } else {
     console.log("This shouldn't happen!")
     res.send(`unknown postName: ${postName}`)

@@ -197,6 +197,99 @@ app.get('/clubs/blso',
         postsController.renderBLSOMain)
 
 
+
+app.get('/jsaManage',
+        postsController.attachJSAPosts,
+        (req, res) => {
+        res.render('jsaManage')
+      });
+app.get('/baasaManage',
+        postsController.attachBAASAPosts,
+        (req, res) => {
+        res.render('baasaManage')
+      });
+app.get('/basoManage',
+        postsController.attachBASOPosts,
+        (req, res) => {
+        res.render('basoManage')
+      });
+app.get('/bbsoManage',
+        postsController.attachBBSOPosts,
+        (req, res) => {
+        res.render('bbsoManage')
+      });
+app.get('/bc3Manage',
+        postsController.attachBC3Posts,
+        (req, res) => {
+        res.render('bc3Manage')
+      });
+app.get('/bksaManage',
+        postsController.attachBKSAPosts,
+        (req, res) => {
+        res.render('bksaManage')
+      });
+app.get('/bieiManage',
+        postsController.attachBIEIPosts,
+        (req, res) => {
+        res.render('bieiManage')
+      });
+app.get('/blsoManage',
+        postsController.attachBLSOPosts,
+        (req, res) => {
+        res.render('blsoManage')
+      });
+app.get('/c2bManage',
+        postsController.attachC2BPosts,
+        (req, res) => {
+        res.render('c2bManage')
+      });
+app.get('/cccManage',
+        postsController.attachCCCPosts,
+        (req, res) => {
+        res.render('cccManage')
+      });
+app.get('/sacnasManage',
+        postsController.attachSACNASPosts,
+        (req, res) => {
+        res.render('sacnasManage')
+      });
+app.get('/sasaManage',
+        postsController.attachSASAPosts,
+        (req, res) => {
+        res.render('sasaManage')
+      });
+app.get('/seacManage',
+        postsController.attachSEACPosts,
+        (req, res) => {
+        res.render('seacManage')
+      });
+app.get('/triskManage',
+        postsController.attachTRISKPosts,
+        (req, res) => {
+        res.render('triskManage')
+      });
+app.get('/tsaManage',
+        postsController.attachTSAPosts,
+        (req, res) => {
+        res.render('tsaManage')
+      });
+app.get('/vsaManage',
+        postsController.attachVSAPosts,
+        (req, res) => {
+        res.render('vsaManage')
+      });
+app.get('/wocaManage',
+        postsController.attachWOCAPosts,
+        (req, res) => {
+        res.render('wocaManage')
+      });
+
+app.get('/allPages',
+        (req, res) => {
+        res.render('allPages')
+      });
+
+
 app.get('/addPosts', function(req, res) {
       console.log(`req.user = ${req.user}`)
         res.render('addPosts', {
